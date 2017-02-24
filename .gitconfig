@@ -1,0 +1,9 @@
+[user]
+	name = tqin5
+	email = tqin5@bloomberg.net
+[alias]
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	visual = !gitk
+[core]
+	editor = vim
