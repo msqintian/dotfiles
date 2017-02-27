@@ -122,6 +122,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let python_highlight_all=1
 
 set number
 " Enable folding
@@ -188,6 +189,9 @@ set showmode                      " Display the mode you're in.
 set showmatch                     "Show matching bracets when
                                   "text indicator is over them
 
+
+" Vim usually has its own clipboard and ignores the system keyboards, but sometimes you might want to cut, copy, and/or paste to/from other applications outside of VIM. On OSX, you can access your system clipboard with this line:
+set clipboard=unnamed
 
 " To add the proper PEP8 indentation, add the following to your .vimrc:
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
@@ -283,3 +287,13 @@ map <leader>fm :FufFile models/dao/**/<CR>
 map <leader>fr :FufFile models/resources/**/<CR>
 map <leader>ft :FufFile test/tests/integration/**/<CR>
 map <leader>fu :FufFile utils/**/<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
