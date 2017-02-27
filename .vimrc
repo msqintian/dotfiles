@@ -23,6 +23,29 @@ Plugin 'tpope/vim-fugitive'
 " surround quote and parantheses
 Plugin 'tpope/vim-surround' " cs'<q> change surrounding ' to <q>
 Plugin 'vim-scripts/taglist.vim' " :TlistToggle
+" vim snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Optional:
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/snipmate-snippets' " snippets for snipmate
+Plugin 'ervandew/supertab' " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion).
+
+Plugin 'pangloss/vim-javascript' " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'junegunn/vim-easy-align' " A simple, easy-to-use Vim alignment plugin.
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown' " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
+
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'tpope/vim-ragtag' " https://github.com/tpope/vim-ragtag
+" Plugin 'tpope/vim-endwise' " wisely add end in ruby
+" Plugin 'bronson/vim-jquery' "https://github.com/bronson/vim-jquery.git
+" Plugin 'Shutnik/jshint2' " https://github.com/Shutnik/jshint2.vim
 
 " require ctags from http://ctags.sourceforge.net/ for taglist
 let Tlist_Ctags_Cmd='$HOME/projects/source/ctags-5.8/'
@@ -32,6 +55,10 @@ call vundle#end()
 
 " Remap Leader to ','
 let mapleader=','
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+let g:ycm_python_binary_path = '/usr/bin/python3'
 
 autocmd FileType python nnoremap <leader>p :0,$!yapf<CR>
 
@@ -53,6 +80,31 @@ let g:pep8_map='<F2>'
 
 " Pro Tip: Want to see the docstrings for folded code?
 let g:SimpylFold_docstring_preview=1
+
+""""""""""""""""""""""""""
+" NerdCommenter Settings "
+""""""""""""""""""""""""""
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 
 set number
 " Enable folding
@@ -201,6 +253,10 @@ nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 nmap <leader>Q :qa<cr>
 nmap <leader>x :x<cr>
+
+" EasyAlgin mapping
+nmap ga <Plugin>(EasyAlign)
+xmap ga <Plugin>(EasyAlign)
 
 """""""""""""""""""""""""""
 "project specific mapping "
