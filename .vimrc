@@ -10,6 +10,7 @@ call vundle#begin()
 "
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-scripts/indentpython.vim'
@@ -41,7 +42,9 @@ Plugin 'junegunn/vim-easy-align' " A simple, easy-to-use Vim alignment plugin.
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown' " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
 
-Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'vim-syntastic/syntastic' " a syntax checking plugin for Vim created by Martin Grenfell. It runs files through external syntax checkers and displays any resulting errors to the user
+
 " Plugin 'tpope/vim-ragtag' " https://github.com/tpope/vim-ragtag
 " Plugin 'tpope/vim-endwise' " wisely add end in ruby
 " Plugin 'bronson/vim-jquery' "https://github.com/bronson/vim-jquery.git
@@ -56,9 +59,9 @@ call vundle#end()
 " Remap Leader to ','
 let mapleader=','
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:ycm_python_binary_path = '/usr/bin/python2.7'
 
-let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 autocmd FileType python nnoremap <leader>p :0,$!yapf<CR>
 
@@ -105,6 +108,20 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+""""""""""""""""""""""""
+" Syntastic Settings   "
+""""""""""""""""""""""""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" requires installing lint in the $PATH
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 set number
 " Enable folding
