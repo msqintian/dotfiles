@@ -7,3 +7,5 @@
 	visual = !gitk
 [core]
 	editor = vim
+[credential]
+	helper = store

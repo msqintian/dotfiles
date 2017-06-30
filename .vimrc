@@ -198,7 +198,7 @@ autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType ruby set foldmethod=syntax
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql tw=120
+au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql tw=100
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
