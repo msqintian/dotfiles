@@ -1,0 +1,6 @@
+{
+  "debug" : true,
+  "experimental" : false,
+  "insecure-registries" : ["rubygems.org"]
+}
+
