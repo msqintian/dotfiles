@@ -2,10 +2,24 @@
 	name = tqin5
 	email = tqin5@bloomberg.net
 [alias]
+	co = checkout
+	dfw = diff --ignore-space-change
 	last = log -1 HEAD
 	unstage = reset HEAD --
 	visual = !gitk
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
+	; autocrlf = true
+[color]
+	ui = auto
 [credential]
 	helper = store
+[url "bbgithub:"]
+	insteadOf = https://bbgithub.dev.bloomberg.com
+[http]
+	sslVerify = false
+[push]
+	default = simple
+[commit]
+	template = ~/.gitmessage

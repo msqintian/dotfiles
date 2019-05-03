@@ -10,7 +10,7 @@ call vundle#begin()
 "
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-scripts/indentpython.vim'
