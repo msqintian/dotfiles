@@ -1,0 +1,6 @@
+{
+  "strict-ssl": false,
+  "directory": "bower_components",
+  "proxy": "http://proxy.bloomberg.com:80",
+  "https-proxy": "http://proxy.bloomberg.com:80"
+}
