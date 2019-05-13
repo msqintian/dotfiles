@@ -11,6 +11,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
+" https://github.com/chase/vim-ansible-yaml
+" fixes indentation for Ansible's dialect of YAML
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-scripts/indentpython.vim'
@@ -181,7 +184,7 @@ set backspace=indent,eol,start
 
 " Set whitespace character representation
 set listchars=tab:>~,nbsp:_,trail:.
-set list
+set nolist
 set showcmd                       " Display incomplete commands.
 set cmdheight=2
 set showmode                      " Display the mode you're in.
@@ -198,6 +201,8 @@ autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType ruby set foldmethod=syntax
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+" automatically convert tab to 2 spaces in yaml file
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql tw=100
 
 " Strip trailing whitespace
