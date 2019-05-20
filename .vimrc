@@ -10,10 +10,14 @@ call vundle#begin()
 "
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'mileszs/ack.vim' " https://github.com/ggreer/the_silver_searcher
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'elmcast/elm-vim'
+" Plugin to simplify the transition between multiline and single-line code
+Plugin 'AndrewRadev/splitjoin.vim'
+" Plugin to search files using ctrl + P
+Plugin 'kien/ctrlp.vim'
 " https://github.com/chase/vim-ansible-yaml
-" fixes indentation for Ansible's dialect of YAML
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-scripts/indentpython.vim'
@@ -49,9 +53,9 @@ Plugin 'plasticboy/vim-markdown' " Syntax highlighting, matching rules and mappi
 Plugin 'vim-syntastic/syntastic' " a syntax checking plugin for Vim created by Martin Grenfell. It runs files through external syntax checkers and displays any resulting errors to the user
 
 " Plugin 'tpope/vim-ragtag' " https://github.com/tpope/vim-ragtag
-" Plugin 'tpope/vim-endwise' " wisely add end in ruby
+Plugin 'tpope/vim-endwise' " wisely add end in ruby
 " Plugin 'bronson/vim-jquery' "https://github.com/bronson/vim-jquery.git
-" Plugin 'Shutnik/jshint2' " https://github.com/Shutnik/jshint2.vim
+" Plugin 'Shutnik/jsh/Users/tqin5/projects/docker_examples/wget-example int2' " https://github.com/Shutnik/jshint2.vim
 
 " require ctags from http://ctags.sourceforge.net/ for taglist
 let Tlist_Ctags_Cmd='$HOME/projects/source/ctags-5.8/'
@@ -86,6 +90,9 @@ let g:pep8_map='<F2>'
 
 " Pro Tip: Want to see the docstrings for folded code?
 let g:SimpylFold_docstring_preview=1
+
+" https://github.com/ggreer/the_silver_searcher configuration
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """"""""""""""""""""""""""
 " NerdCommenter Settings "
