@@ -2,14 +2,14 @@
 :backtrace: false
 :bulk_threshold: 1000
 :sources:
-- http://artifactory.dev.bloomberg.com:8080/artifactory/api/gems/bb-gems-local/
-- http://artifactory.dev.bloomberg.com:8080/artifactory/api/gems/ruby-repos/
 - https://artprod.dev.bloomberg.com/artifactory/api/gems/ruby-repos/
 - https://artprod.dev.bloomberg.com/artifactory/api/gems/bb-gems-local/
+- http://artifactory.dev.bloomberg.com:8080/artifactory/api/gems/bb-gems-local/
+- http://artifactory.dev.bloomberg.com:8080/artifactory/api/gems/ruby-repos/
 :update_sources: true
 :verbose: true
 benchmark: false
 gem: "--no-document"
-http_proxy: http://bproxy.tdmz1.bloomberg.com:80
 install: "--no-rdoc --no-ri"
 update: "--no-rdoc --no-ri"
+http_proxy: http://proxy.bloomberg.com:81
