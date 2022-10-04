@@ -1,8 +1,15 @@
 {
-  "debug" : true,
-  "insecure-registries" : [
-    "rubygems.org"
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "dns": [
+    "10.10.10.10"
   ],
-  "experimental" : false
+  "dns-search": [
+    "bloomberg.com"
+  ],
+  "experimental": false
 }
-

@@ -12,4 +12,3 @@ benchmark: false
 gem: "--no-document"
 install: "--no-rdoc --no-ri"
 update: "--no-rdoc --no-ri"
-http_proxy: http://proxy.bloomberg.com:81

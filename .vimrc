@@ -210,7 +210,7 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 " automatically convert tab to 2 spaces in yaml file
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql tw=100
+au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql tw=128
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -301,14 +301,14 @@ map <leader>ft :FufFile test/tests/integration/**/<CR>
 map <leader>fu :FufFile utils/**/<CR>
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " format XML https://vim.fandom.com/wiki/Pretty-formatting_XML
 com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
